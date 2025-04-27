@@ -2,11 +2,6 @@
 
 # 📊 Dataset Creation, Loading, Statistical Computations & Pre-processing in Python
 
-> **Contributors**  
-> - VIBUSHAN S (24MSRCI010)  
-> - KHADELA ASHISH MAHESHBHAI (24MSRCI012)  
-> - MUNIWALA KAUSHAL VIRENDRA KR (24MSRCI013)
-
 ---
 
 ## 📚 Project Overview
