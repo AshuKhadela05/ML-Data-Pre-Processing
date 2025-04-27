@@ -1,8 +1,3 @@
-# VIBUSHAN S                   (24MSRCI010)
-# KHADELA ASHISH MAHESHBHAI    (24MSRCI012)
-# MUNIWALA KAUSHAL VIRENDRA KR (24MSRCI013)
-
-# 3	
 # a) Creation and Loading different types of datasets in Python using the required libraries.
 #    i.	Creation using pandas
 #   ii.	Loading CSV dataset files using Pandas
@@ -259,3 +254,166 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# -----------------------------------------OUTPUT------------------------------------------------
+
+==================================================
+DATASET CREATION AND LOADING DEMONSTRATION
+==================================================
+
+Created Dataset:
+   Student_ID      Name  Age  Math_Score  Science_Score  Graduated
+0         101    Ashish   20          85             90       True
+1         102   Kaushal   21          78             85      False
+2         103  Vibushan   19          92             88       True
+3         104     Sujal   22          88             92       True
+4         105      Kush   20          90             85      False
+
+Successfully loaded dataset from URL: https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv
+First 5 rows:
+   sepal_length  sepal_width  petal_length  petal_width species
+0           5.1          3.5           1.4          0.2  setosa
+1           4.9          3.0           1.4          0.2  setosa
+2           4.7          3.2           1.3          0.2  setosa
+3           4.6          3.1           1.5          0.2  setosa
+4           5.0          3.6           1.4          0.2  setosa
+
+Loaded sklearn Dataset (First 5 rows):
+   sepal length (cm)  sepal width (cm)  petal length (cm)  petal width (cm)  target
+0                5.1               3.5                1.4               0.2     0.0
+1                4.9               3.0                1.4               0.2     0.0
+2                4.7               3.2                1.3               0.2     0.0
+3                4.6               3.1                1.5               0.2     0.0
+4                5.0               3.6                1.4               0.2     0.0
+
+==================================================
+STATISTICAL COMPUTATIONS DEMONSTRATION
+==================================================
+
+Statistics for 'sepal_length':
+Mean: 5.8433
+Median: 5.8000
+Mode: 5.0000
+Variance: 0.6811
+Standard Deviation: 0.8253
+
+==================================================
+DATA PRE-PROCESSING TECHNIQUES DEMONSTRATION
+==================================================
+
+Original DataFrame:
+   Student_ID      Name  Age  Math_Score  Science_Score  Graduated
+0         101    Ashish   20          85             90       True
+1         102   Kaushal   21          78             85      False
+2         103  Vibushan   19          92             88       True
+3         104     Sujal   22          88             92       True
+4         105      Kush   20          90             85      False
+
+Melted DataFrame (long format):
+   Student_ID      Name     Subject  Score
+0         101    Ashish  Math_Score     85
+1         102   Kaushal  Math_Score     78
+2         103  Vibushan  Math_Score     92
+3         104     Sujal  Math_Score     88
+4         105      Kush  Math_Score     90
+
+Pivoted DataFrame (back to wide format):
+Subject  Student_ID      Name  Math_Score  Science_Score
+0               101    Ashish          85             90
+1               102   Kaushal          78             85
+2               103  Vibushan          92             88
+3               104     Sujal          88             92
+4               105      Kush          90             85
+
+Original DataFrame:
+   Student_ID      Name  Age  Math_Score  Science_Score  Graduated
+0         101    Ashish   20          85             90       True
+1         102   Kaushal   21          78             85      False
+2         103  Vibushan   19          92             88       True
+3         104     Sujal   22          88             92       True
+4         105      Kush   20          90             85      False
+
+Students older than 20:
+   Student_ID     Name  Age  Math_Score  Science_Score  Graduated
+1         102  Kaushal   21          78             85      False
+3         104    Sujal   22          88             92       True
+
+Students with scores > 85 in both subjects:
+   Student_ID      Name  Age  Math_Score  Science_Score  Graduated
+2         103  Vibushan   19          92             88       True
+3         104     Sujal   22          88             92       True
+
+Selected columns (Name and Math_Score):
+       Name  Math_Score
+0    Ashish          85
+1   Kaushal          78
+2  Vibushan          92
+3     Sujal          88
+4      Kush          90
+
+First DataFrame to merge:
+   Student_ID      Name  Age
+0         101    Ashish   20
+1         102   Kaushal   21
+2         103  Vibushan   19
+3         104     Sujal   22
+4         105      Kush   20
+
+Second DataFrame to merge:
+   Student_ID  Math_Score  Science_Score
+0         101          85             90
+1         102          78             85
+2         103          92             88
+3         104          88             92
+4         105          90             85
+
+Merged DataFrame:
+   Student_ID      Name  Age  Math_Score  Science_Score
+0         101    Ashish   20          85             90
+1         102   Kaushal   21          78             85
+2         103  Vibushan   19          92             88
+3         104     Sujal   22          88             92
+4         105      Kush   20          90             85
+
+DataFrame with missing values:
+     A    B   C
+0  1.0  5.0  10
+1  2.0  NaN  20
+2  NaN  NaN  30
+3  4.0  8.0  40
+
+Missing values count:
+A    1
+B    2
+C    0
+dtype: int64
+
+After dropping rows with missing values:
+     A    B   C
+0  1.0  5.0  10
+3  4.0  8.0  40
+
+After filling missing values with mean:
+          A    B   C
+0  1.000000  5.0  10
+1  2.000000  6.5  20
+2  2.333333  6.5  30
+3  4.000000  8.0  40
+
+Original Data (columns: ['sepal_length', 'sepal_width']):
+   sepal_length  sepal_width
+0           5.1          3.5
+1           4.9          3.0
+2           4.7          3.2
+3           4.6          3.1
+4           5.0          3.6
+
+After Min-Max Normalization:
+   sepal_length  sepal_width
+0      0.222222     0.625000
+1      0.166667     0.416667
+2      0.111111     0.500000
+3      0.083333     0.458333
+4      0.194444     0.666667
+
+All operations completed successfully!
